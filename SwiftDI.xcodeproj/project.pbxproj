@@ -21,6 +21,7 @@
 		8617A78623347D380058DB17 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617A78523347D380058DB17 /* MainPresenter.swift */; };
 		8617A78823347D4E0058DB17 /* MainController+PresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617A78723347D4E0058DB17 /* MainController+PresenterView.swift */; };
 		8617A78B23347E550058DB17 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617A78A23347E550058DB17 /* Presenter.swift */; };
+		8636F393239A00B2004472E1 /* DiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8636F392239A00B2004472E1 /* DiProvider.swift */; };
 		86A59BE623349E4E002C9CB4 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A59BE523349E4E002C9CB4 /* RealmSwift.framework */; };
 		86A59BEA2334A089002C9CB4 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A59BE323349E3C002C9CB4 /* RxSwift.framework */; };
 		86A59BED2334A2A7002C9CB4 /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A59BEC2334A2A7002C9CB4 /* TodoItem.swift */; };
@@ -59,6 +60,7 @@
 		8617A78523347D380058DB17 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		8617A78723347D4E0058DB17 /* MainController+PresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainController+PresenterView.swift"; sourceTree = "<group>"; };
 		8617A78A23347E550058DB17 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		8636F392239A00B2004472E1 /* DiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiProvider.swift; sourceTree = "<group>"; };
 		86A59BE323349E3C002C9CB4 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		86A59BE523349E4E002C9CB4 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		86A59BE82334A079002C9CB4 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				8617A78923347E3F0058DB17 /* Common */,
+				8636F394239A091E004472E1 /* DI */,
 				8617A77C233479840058DB17 /* Data */,
 				8617A779233478910058DB17 /* Domain */,
 				8617A774233475830058DB17 /* Main */,
@@ -151,8 +154,8 @@
 		8617A779233478910058DB17 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				8617A77A233478F90058DB17 /* TodoUseCase.swift */,
 				E08DD37B1231C301F6FF15B5 /* Model */,
+				8617A77A233478F90058DB17 /* TodoUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -169,9 +172,9 @@
 		8617A77F23347A420058DB17 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				E08DD6AAE885F8623FC2D0C7 /* Entity */,
 				86A59BEB2334A291002C9CB4 /* RealmObject */,
 				8617A78023347AF80058DB17 /* TodoItemDataSource.swift */,
-				E08DD6AAE885F8623FC2D0C7 /* Entity */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -183,6 +186,14 @@
 				8617A78A23347E550058DB17 /* Presenter.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		8636F394239A091E004472E1 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				8636F392239A00B2004472E1 /* DiProvider.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 		86A59BE223349E3C002C9CB4 /* Frameworks */ = {
@@ -201,8 +212,8 @@
 		86A59BEB2334A291002C9CB4 /* RealmObject */ = {
 			isa = PBXGroup;
 			children = (
-				86A59BEC2334A2A7002C9CB4 /* TodoItem.swift */,
 				E08DD7D03C51CF020821587E /* RealmObject.swift */,
+				86A59BEC2334A2A7002C9CB4 /* TodoItem.swift */,
 			);
 			path = RealmObject;
 			sourceTree = "<group>";
@@ -331,6 +342,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -360,6 +372,7 @@
 				86A59BED2334A2A7002C9CB4 /* TodoItem.swift in Sources */,
 				8617A755233475480058DB17 /* AppDelegate.swift in Sources */,
 				E08DD5C6F80118EC5A1A1138 /* RealmObject.swift in Sources */,
+				8636F393239A00B2004472E1 /* DiProvider.swift in Sources */,
 				E08DD14B3FB334F4A062790F /* TodoItemEntity.swift in Sources */,
 				E08DD5BD41D9AAB396E7D295 /* TodoItemModel.swift in Sources */,
 			);

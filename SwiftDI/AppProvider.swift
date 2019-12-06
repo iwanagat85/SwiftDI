@@ -7,34 +7,43 @@
 //
 
 import Foundation
-import UIKit
 
-protocol AppProvider {
+protocol AppProvider: DiProvider {
 }
 
 // Presenter
 extension AppProvider {
     static func provide(_ controller: MainViewController) -> MainPresenter {
-        let presenter = MainPresenterImpl(useCase: provide())
-        presenter.view = controller
-        return presenter
+        return container.provide { () -> MainPresenter in
+            let presenter = MainPresenterImpl(useCase: provide())
+            presenter.view = controller
+            return presenter
+        }
     }
 }
 
 // Domain
 extension AppProvider {
+
     static func provide() -> TodoUseCase {
-        return TodoUseCaseImpl(repository: provide())
+        return container.provide { () -> TodoUseCase in
+            return TodoUseCaseImpl(repository: provide())
+        }
     }
 }
 
 // Data
 extension AppProvider {
+    
     static func provide() -> TodoItemRepository {
-        return TodoItemRepositoryImpl(dataSource: provide())
+        return container.provide { () -> TodoItemRepository in
+            return TodoItemRepositoryImpl(dataSource: provide())
+        }
     }
 
     static func provide() -> TodoItemDataSource {
-        return TodoItemDataSourceImpl()
+        return container.provide { () -> TodoItemDataSource in
+            return TodoItemDataSourceImpl()
+        }
     }
 }

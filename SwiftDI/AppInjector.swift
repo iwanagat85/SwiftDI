@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct AppInjector:
+public class AppInjector:
         MainViewInjector {
 }
 

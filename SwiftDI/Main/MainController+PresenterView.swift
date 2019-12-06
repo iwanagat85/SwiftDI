@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import RealmSwift
 import RxCocoa
-import RxRealm
 import RxSwift
 
 extension MainViewController: MainPresenterView {

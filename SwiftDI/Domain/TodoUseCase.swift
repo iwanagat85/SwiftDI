@@ -15,7 +15,7 @@ public protocol TodoUseCase {
     func delete(_ todo: TodoItemModel) -> Single<Void>
 }
 
-public struct TodoUseCaseImpl: TodoUseCase {
+public class TodoUseCaseImpl: TodoUseCase {
 
     let repository: TodoItemRepository
 

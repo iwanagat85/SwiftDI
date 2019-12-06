@@ -15,7 +15,7 @@ protocol TodoItemRepository {
     func deleteById(_ id: Int) -> Observable<Void>
 }
 
-public struct TodoItemRepositoryImpl: TodoItemRepository {
+public class TodoItemRepositoryImpl: TodoItemRepository {
 
     let dataSource: TodoItemDataSource
 

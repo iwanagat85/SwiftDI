@@ -16,7 +16,7 @@ public protocol TodoItemDataSource {
     func deleteById(_ id: Int) -> Observable<Void>
 }
 
-public struct TodoItemDataSourceImpl: TodoItemDataSource {
+public class TodoItemDataSourceImpl: TodoItemDataSource {
 
     private let realm = try! Realm()
 
